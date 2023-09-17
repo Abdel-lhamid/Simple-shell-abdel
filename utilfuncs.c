@@ -25,7 +25,7 @@ void free2dar(char **array)
  * @sh_name: name of shell
  * @command: the command
  * @index: index of the command
-*/
+ */
 void print_error(char *sh_name, char *command, int index)
 {
 	char *ind;
@@ -38,4 +38,18 @@ void print_error(char *sh_name, char *command, int index)
 	write(STDERR_FILENO, command, _strlen(command));
 	write(STDERR_FILENO, ": not found\n", 12);
 	free(ind);
+}
+/**
+ * my_env - custon env command print env
+*/
+
+void my_env()
+{
+	int i = 0;
+
+	while (environ[i])
+	{
+		_puts(environ[i]);
+		i++;
+	}
 }

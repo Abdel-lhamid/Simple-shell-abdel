@@ -42,10 +42,7 @@ char *get_path(char *command)
 		if (command[i] == '/')
 		{
 			if (stat(command, &st) == 0)
-			{
 				return (_strdup(command));
-			}
-				
 			return (NULL);
 		}
 
@@ -53,9 +50,7 @@ char *get_path(char *command)
 	env_path = get_env("PATH");
 	if (!env_path)
 		return (NULL);
-
 	path = strtok(env_path, ":");
-
 	while (path)
 	{
 		full_command = malloc(_strlen(path) + _strlen(command) + 2);

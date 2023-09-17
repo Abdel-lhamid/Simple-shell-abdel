@@ -29,6 +29,18 @@ int main(int ac, char **av)
 		if (!command)
 			continue;
 
+		if (_strcmp(command[0], "exit") == 0)
+		{
+			free2dar(command);
+			exit(status);
+		}
+		if (_strcmp(command[0], "env") == 0)
+		{
+			my_env();
+			free2dar(command);
+			continue;
+		}
+
 		status = execute_command(command, av, index);
 	}
 

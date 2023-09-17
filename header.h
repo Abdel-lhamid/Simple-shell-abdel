@@ -14,6 +14,7 @@
 
 
 #define DELIMITERS " \t\n"
+#define BUFFER_SIZE 1024
 
 extern char **environ;
 
@@ -25,6 +26,9 @@ char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 int numlen(int n);
 char *int_to_string(int number);
+int _putchar(char c);
+void _puts(char *str);
+char *_strncpy(char *dest, char *src, int n);
 
 
 
@@ -40,6 +44,7 @@ char *get_path(char *command);
 /*util funcs*/
 void free2dar(char **array);
 void print_error(char *sh_name, char *command, int index);
+void my_env(void);
 
 
 
