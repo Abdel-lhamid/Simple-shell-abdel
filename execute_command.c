@@ -3,7 +3,7 @@
  * execute_command - execute a command
  * @command: command provided by the user
  * @av: argument vector in main
- * @index: the number of commandes executed
+ * @index: the number of commandes
  * Return: 0 on success
  */
 
@@ -20,7 +20,6 @@ int execute_command(char **command, char **av, int index)
 		free2dar(command);
 		return (127);
 	}
-	printf("%s\n", full_command);
 
 	child_pid = fork();
 
@@ -30,9 +29,7 @@ int execute_command(char **command, char **av, int index)
 		{
 			free(full_command), full_command = NULL;
 			free2dar(command);
-			printf("command not executed");
 		}
-		
 	}
 	else
 	{

@@ -41,8 +41,11 @@ char *get_path(char *command)
 	{
 		if (command[i] == '/')
 		{
-			if (stat(command, &st))
+			if (stat(command, &st) == 0)
+			{
 				return (_strdup(command));
+			}
+				
 			return (NULL);
 		}
 
@@ -61,7 +64,7 @@ char *get_path(char *command)
 			_strcpy(full_command, path);
 			_strcat(full_command, "/");
 			_strcat(full_command, command);
-			if (stat(full_command, &st))
+			if (stat(full_command, &st) == 0)
 			{
 				free(env_path);
 				return (full_command);
