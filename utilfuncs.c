@@ -36,6 +36,6 @@ void print_error(char *sh_name, char *command, int index)
 	write(STDERR_FILENO, ind, _strlen(ind));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, command, _strlen(command));
-	write(STDERR_FILENO, ": not found\n", 13);
+	write(STDERR_FILENO, ": not found\n", 12);
 	free(ind);
 }
